@@ -6,41 +6,38 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:46:02 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/17 13:03:47 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/17 17:32:45 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int ft_check_components(char **map)
+int ft_check_components(t_map *mapping)
 {
-    int c = 0;
-    int p = 0;
-    int e = 0;
     int iterator = 0;
-    while (map[iterator])
+    while (mapping->map[iterator])
     {
-        c += ft_charlen(map[iterator], 'C');
-        p += ft_charlen(map[iterator], 'P');
-        e += ft_charlen(map[iterator], 'E');
+        mapping->c += ft_charlen(mapping->map[iterator], 'C');
+        mapping->p += ft_charlen(mapping->map[iterator], 'P');
+        mapping->e += ft_charlen(mapping->map[iterator], 'E');
         ++iterator;
     }
-    if (c >= 1 && p == 1 && e == 1)
+    if (mapping->c >= 1 && mapping->p == 1 && mapping->e == 1)
         return (1);
     return (0);
 }
 
-int ft_check_walls(char **map)
+int ft_check_walls(t_map *mapping)
 {
     int counter_a;
     int counter_b;
     char    *line;
 
     counter_a = 0;
-    while (counter_a < ft_map_len(map))
+    while (counter_a < ft_map_len(mapping))
     {
         counter_b = 0;
-        line = map[counter_a];
+        line = mapping->map[counter_a];
         if (counter_a == 0)
         {
             while (line[counter_b] != '\n')
@@ -50,7 +47,7 @@ int ft_check_walls(char **map)
                 ++counter_b;
             }
         }
-        else if (counter_a + 1 == ft_map_len(map))
+        else if (counter_a + 1 == ft_map_len(mapping))
         {
             while (line[counter_b] != '\n')
             {
@@ -75,15 +72,15 @@ int ft_check_walls(char **map)
     return (1);
 }
 
-int ft_check_lens(char **map)
+int ft_check_lens(t_map *mapping)
 {
-    int maplen = ft_map_len(map);
+    int maplen = ft_map_len(mapping);
     int i = 0;
-    size_t strlen = ft_strlen(map[i]);
+    size_t strlen = ft_strlen(mapping->map[i]);
     ++i;
     while (i < maplen)
     {
-        if (!(strlen == ft_strlen(map[i])))
+        if (!(strlen == ft_strlen(mapping->map[i])))
             return (0);
         ++i;
     }        

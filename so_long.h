@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:38:07 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/17 12:42:33 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/17 17:38:33 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,20 @@
 # include "./superlib/includes/superlib.h"
 # include <fcntl.h>
 
+typedef struct s_map
+{
+    int c;
+    int p;
+    int e;
+    char **map;
+} t_map;
+
 void ft_error(char *s);
-char	**ft_map_parsing(char *s);
-int ft_check_components(char **map);
-int ft_check_walls(char **map);
-int ft_map_len(char **map);
-int ft_check_lens(char **map);
+void ft_map_parsing(t_map *mapping, char *path);
+int ft_map_checking(t_map *mapping);
+int ft_map_len(t_map *mapping);
+int ft_check_components(t_map *mapping);
+int ft_check_walls(t_map *mapping);
+int ft_check_lens(t_map *mapping);
 
 #endif
