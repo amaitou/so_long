@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:46:02 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/17 12:36:40 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/17 13:03:47 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,22 +88,4 @@ int ft_check_lens(char **map)
         ++i;
     }        
     return (1);
-}
-
-int ft_check_map(char **map)
-{
-    if (!ft_check_components(map))
-        return (0);
-    if (!ft_check_walls(map))
-        return (0);
-    if (!ft_check_lens(map))
-        return (0);
-    return (1);
-}
-
-int main(void)
-{
-    char **p = ft_map_parsing("./maps/map.ber");
-    ft_printf("%d", ft_check_map(p));
-    return (0);
 }
