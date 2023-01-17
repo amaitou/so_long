@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:46:02 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/17 17:32:45 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/17 17:47:46 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int ft_check_walls(t_map *mapping)
     char    *line;
 
     counter_a = 0;
-    while (counter_a < ft_map_len(mapping))
+    while (counter_a < ft_map_size(mapping))
     {
         counter_b = 0;
         line = mapping->map[counter_a];
@@ -47,7 +47,7 @@ int ft_check_walls(t_map *mapping)
                 ++counter_b;
             }
         }
-        else if (counter_a + 1 == ft_map_len(mapping))
+        else if (counter_a + 1 == ft_map_size(mapping))
         {
             while (line[counter_b] != '\n')
             {
@@ -74,7 +74,7 @@ int ft_check_walls(t_map *mapping)
 
 int ft_check_lens(t_map *mapping)
 {
-    int maplen = ft_map_len(mapping);
+    int maplen = ft_map_size(mapping);
     int i = 0;
     size_t strlen = ft_strlen(mapping->map[i]);
     ++i;
