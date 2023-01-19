@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:46:02 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/17 17:47:46 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/18 14:54:47 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ int ft_check_lens(t_map *mapping)
         if (!(strlen == ft_strlen(mapping->map[i])))
             return (0);
         ++i;
-    }        
+    }
+    mapping->height = maplen;
+    mapping->width = strlen;
     return (1);
 }

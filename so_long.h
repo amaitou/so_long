@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:38:07 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/17 17:48:01 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/18 15:01:32 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "./superlib/includes/superlib.h"
 # include <fcntl.h>
+# include <mlx.h>
 
 typedef struct s_map
 {
@@ -22,6 +23,8 @@ typedef struct s_map
     int p;
     int e;
     char **map;
+    int width;
+    int height;
 } t_map;
 
 void ft_error(char *s);
