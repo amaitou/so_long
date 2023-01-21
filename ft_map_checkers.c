@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:46:02 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/21 20:27:45 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/21 22:55:52 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,9 +80,9 @@ int	ft_check_lens(t_map *smap)
 	int		i;
 	size_t	strlen;
 
+	i = 0;
 	smaplen = ft_map_size(smap);
 	strlen = ft_strlen(smap->map[i]);
-	i = 0;
 	++i;
 	while (i < smaplen)
 	{

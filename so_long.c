@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 17:11:43 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/21 20:04:30 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/21 22:56:29 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@ int main(int ac, char **ag)
             if (ft_map_checking(&map))
                 ft_printf("Map Is Valid\n");
         }
-        ft_error("[!] The Path of The Map Is Invalid");
+        else
+            ft_error("[!] The Path of The Map Is Invalid");
     }
     else
-        ft_error("[!] Missing Arguments");
+        ft_error("[!] Missing Arguments Or Too Many Arguments Have Been Set");
     return (0);
 }
