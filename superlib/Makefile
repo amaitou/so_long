@@ -43,6 +43,7 @@ SRC = sources/validators/ft_isalpha.c \
 		sources/strings/ft_strmapi.c \
 		sources/strings/ft_striteri.c \
 		sources/strings/ft_charlen.c \
+		sources/strings/ft_strcmp.c \
 		sources/file_descriptors/ft_putchar_fd.c \
 		sources/file_descriptors/ft_putstr_fd.c \
 		sources/file_descriptors/ft_putendl_fd.c \
