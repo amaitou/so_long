@@ -6,15 +6,15 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:24:34 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/16 11:27:58 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/21 20:24:14 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void ft_error(char *s)
+void	ft_error(char *s)
 {
-    ft_printf("Error\n");
-    ft_printf("%s\n", s);
-    exit(0);
+	ft_printf("Error\n");
+	ft_printf("%s\n", s);
+	exit(0);
 }
