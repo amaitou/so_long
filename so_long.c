@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 17:11:43 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/21 22:56:29 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/22 15:49:27 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 int main(int ac, char **ag)
 {
-    t_map map;
+    t_game game;
 
     (void)ac;
     if (ac == 2)
     {
-        map.pathfile = ag[1];
-        if (ft_path_file(map.pathfile))
+        game.pathfile = ag[1];
+        if (ft_path_file(game.pathfile))
         {
-            ft_map_parsing(&map);
-            if (ft_map_checking(&map))
+            ft_map_parsing(&game);
+            if (ft_map_checking(&game))
                 ft_printf("Map Is Valid\n");
         }
         else

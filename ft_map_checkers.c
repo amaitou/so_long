@@ -6,40 +6,40 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:46:02 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/21 22:55:52 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/22 15:48:04 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	ft_check_components(t_map *smap)
+int	ft_check_components(t_game *game)
 {
 	int	iterator;
 
 	iterator = 0;
-	while (smap->map[iterator])
+	while (game->map[iterator])
 	{
-		smap->collectibles += ft_charlen(smap->map[iterator], 'C');
-		smap->players += ft_charlen(smap->map[iterator], 'P');
-		smap->exits += ft_charlen(smap->map[iterator], 'E');
+		game->collectibles += ft_charlen(game->map[iterator], 'C');
+		game->players += ft_charlen(game->map[iterator], 'P');
+		game->exits += ft_charlen(game->map[iterator], 'E');
 		++iterator;
 	}
-	if (smap->collectibles >= 1 && smap->players == 1 && smap->exits == 1)
+	if (game->collectibles >= 1 && game->players == 1 && game->exits == 1)
 		return (1);
 	return (0);
 }
 
-int	ft_check_walls(t_map *smap)
+int	ft_check_walls(t_game *game)
 {
 	int		counter_a;
 	int		counter_b;
 	char	*line;
 
 	counter_a = 0;
-	while (counter_a < ft_map_size(smap))
+	while (counter_a < ft_map_size(game))
 	{
 		counter_b = 0;
-		line = smap->map[counter_a];
+		line = game->map[counter_a];
 		if (counter_a == 0)
 		{
 			while (line[counter_b] != '\n')
@@ -49,7 +49,7 @@ int	ft_check_walls(t_map *smap)
 				++counter_b;
 			}
 		}
-		else if (counter_a + 1 == ft_map_size(smap))
+		else if (counter_a + 1 == ft_map_size(game))
 		{
 			while (line[counter_b] != '\n')
 			{
@@ -74,23 +74,23 @@ int	ft_check_walls(t_map *smap)
 	return (1);
 }
 
-int	ft_check_lens(t_map *smap)
+int	ft_check_lens(t_game *game)
 {
-	int		smaplen;
+	int		maplen;
 	int		i;
 	size_t	strlen;
 
 	i = 0;
-	smaplen = ft_map_size(smap);
-	strlen = ft_strlen(smap->map[i]);
+	maplen = ft_map_size(game);
+	strlen = ft_strlen(game->map[i]);
 	++i;
-	while (i < smaplen)
+	while (i < maplen)
 	{
-		if (!(strlen == ft_strlen(smap->map[i])))
+		if (!(strlen == ft_strlen(game->map[i])))
 			return (0);
 		++i;
 	}
-	smap->img.width = smaplen;
-	smap->img.height = strlen;
+	game->img.width = maplen;
+	game->img.height = strlen;
 	return (1);
 }
