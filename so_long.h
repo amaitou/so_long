@@ -6,14 +6,14 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:38:07 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/23 21:42:41 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/24 00:25:55 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "./superlib/includes/superlib.h"
+# include "./superlib/superlib.h"
 # include <fcntl.h>
 # include <mlx.h>
 
