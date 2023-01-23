@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 17:16:59 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/23 20:25:33 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/23 20:29:50 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void ft_set_images_to_windows(t_game *game)
 			if (game->map[i][j] == 'C')
 				mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win, game->img.collectible, j * 50, i * 50);
 			++j;
-			ft_printf("%c -> [%d][%d]\n", game->map[i][j], i, j);
 		}
 		++i;
 	}
