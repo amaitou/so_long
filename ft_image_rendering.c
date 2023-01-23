@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 17:16:59 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/23 16:33:11 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/23 20:25:33 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void ft_initial_images(t_game *game)
 	game->img.collectible = 
 		mlx_xpm_file_to_image(game->mlx.mlx, "./textures/collectible.xpm", &x, &y);
 	game->img.player_1 = 
-		mlx_xpm_file_to_image(game->mlx.mlx, "./textures/player_1.xpm", &x, &y);
+		mlx_xpm_file_to_image(game->mlx.mlx, "./textures/player_right.xpm", &x, &y);
 	game->img.background = 
 		mlx_xpm_file_to_image(game->mlx.mlx, "./textures/wall.xpm", &x, &y);
 	game->img.wall = 
@@ -41,15 +41,17 @@ void ft_set_images_to_windows(t_game *game)
 		j = 0;
 		while (game->map[i][j])
 		{
+			if (game->map[i][j] == '1' || game->map[i][j] == 'C' || game->map[i][j] == 'P' || game->map[i][j] == 'E' || game->map[i][j] == '1')
+				mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win, game->img.background, j * 50, i * 50);
 			if (game->map[i][j] == '1')
 				mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win, game->img.wall, j * 50, i * 50);
-			else if (game->map[i][j] == '0')
+			if (game->map[i][j] == '0')
 				mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win, game->img.background, j * 50, i * 50);
-			else if (game->map[i][j] == 'P')
+			if (game->map[i][j] == 'P')
 				mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win, game->img.player_1, j * 50, i * 50);
-			else if (game->map[i][j] == 'E')
+			if (game->map[i][j] == 'E')
 				mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win, game->img.exit, j * 50, i * 50);
-			else if (game->map[i][j] == 'C')
+			if (game->map[i][j] == 'C')
 				mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win, game->img.collectible, j * 50, i * 50);
 			++j;
 			ft_printf("%c -> [%d][%d]\n", game->map[i][j], i, j);
