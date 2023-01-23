@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:46:02 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/22 15:48:04 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/23 16:33:59 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	ft_check_lens(t_game *game)
 			return (0);
 		++i;
 	}
-	game->img.width = maplen;
-	game->img.height = strlen;
+	game->img.width = strlen - 1;
+	game->img.height = maplen;
 	return (1);
 }
