@@ -1,35 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_path_file.c                                     :+:      :+:    :+:   */
+/*   ft_parse.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/21 19:26:43 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/21 20:33:31 by amait-ou         ###   ########.fr       */
+/*   Created: 2023/01/16 13:10:19 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/01/26 16:29:12 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static int	worldlen(char **p)
+static int	ft_ends(char *s)
 {
-	int	i;
+	int	strlen;
 
-	i = 0;
-	while (p[i])
-		++i;
-	return (i);
-}
-
-int	ft_path_file(char *s)
-{
-	char	**p;
-	int		i;
-
-	p = ft_split(s, '.');
-	i = worldlen(p);
-	if (ft_strcmp(p[i - 1], "ber") == 0)
+	strlen = ft_strlen(s);
+	if (s[strlen - 1] == '\n')
 		return (1);
 	return (0);
+}
+
+int	ft_parse(t_game *game)
+{
+	int		fd;
+	char	*lines;
+	char	*line;
+
+	fd = open(game->path, O_RDONLY);
+	if (fd < 0)
+		return (-1);
+	lines = "";
+	line = get_next_line(fd);
+	while (line)
+	{
+		lines = ft_strjoin(lines, line);
+		line = get_next_line(fd);
+	}
+	if (ft_ends(lines))
+		return (0);
+	game->map = ft_split(lines, '\n');
+	close(fd);
+	return (1);
 }

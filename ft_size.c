@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_size.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 16:29:24 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/26 16:58:58 by amait-ou         ###   ########.fr       */
+/*   Created: 2023/01/17 11:14:15 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/01/25 16:26:00 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int ac, char **ag)
+int	ft_size(t_game *game)
 {
-	t_game	game;
+	int	i;
 
-	if (ac == 2)
-	{
-		game.path = ag[1];
-		ft_init(&game);
-		if (ft_check(&game))
-			ft_printf("Valid Map\n");
-	}
-	return (0);
+	i = 0;
+	while (game->map[i])
+		++i;
+	return (i);
 }
