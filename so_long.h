@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:38:07 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/26 16:46:21 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/26 17:56:32 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,6 @@ int		ft_comp(t_game *game);
 int		ft_items(t_game *game);
 int		ft_rect(t_game *game);
 int		ft_size(t_game *game);
+void	ft_render(t_game *game);
 
 #endif

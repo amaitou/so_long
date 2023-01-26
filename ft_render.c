@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_image_rendering.c                               :+:      :+:    :+:   */
+/*   ft_render.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 17:16:59 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/23 22:16:12 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/26 17:56:04 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_initial_images(t_game *game)
+void	ft_imgs(t_game *game)
 {
 	int	x;
 	int	y;
@@ -36,7 +36,7 @@ void	ft_initial_images(t_game *game)
 			"./textures/exit.xpm", &x, &y);
 }
 
-void	ft_set_images_to_windows(t_game *game)
+void	ft_render(t_game *game)
 {
 	int		i;
 	int		j;
@@ -44,7 +44,7 @@ void	ft_set_images_to_windows(t_game *game)
 
 	i = 0;
 	win = game->mlx.mlx_win;
-	ft_initial_images(game);
+	ft_initial_imgs(game);
 	while (game->map[i])
 	{
 		j = 0;
