@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:25:46 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/26 16:48:38 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/26 18:31:24 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,24 @@ static int	ft_contain(char *s, char c)
 	return (0);
 }
 
+static void	ft_counter(t_game *game, char c, int i, int j)
+{
+	if (c == 'P')
+	{
+		game->plr.x = i;
+		game->plr.y = j;
+		game->plrs += 1;
+	}
+	else if (c == 'E')
+	{
+		game->ext.x = i;
+		game->ext.y = j;
+		game->exts += 1;
+	}
+	else if (c == 'C')
+		game->cols += 1;
+}
+
 int	ft_items(t_game *game)
 {
 	int	i;
@@ -36,12 +54,7 @@ int	ft_items(t_game *game)
 		{
 			if (!(ft_contain("PEC10", game->map[i][j])))
 				return (-1);
-			if (game->map[i][j] == 'P')
-				game->plrs += 1;
-			else if (game->map[i][j] == 'E')
-				game->exts += 1;
-			else if (game->map[i][j] == 'C')
-				game->cols += 1;
+			ft_counter(game, game->map[i][j], i, j);
 			++j;
 		}
 		++i;
