@@ -6,18 +6,18 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:14:15 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/25 16:26:00 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/28 01:26:13 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	ft_size(t_game *game)
+void	ft_size(t_game *game)
 {
 	int	i;
 
 	i = 0;
 	while (game->map[i])
 		++i;
-	return (i);
+	game->len = i;
 }

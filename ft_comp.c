@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:25:46 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/26 18:31:24 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/28 01:28:09 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_items(t_game *game)
 	int	j;
 
 	i = 0;
-	while (game->map[i])
+	while (i < game->len)
 	{
 		j = 0;
 		while (game->map[i][j])
@@ -72,7 +72,7 @@ int	ft_rect(t_game *game)
 	i = 0;
 	line = game->map[i];
 	++i;
-	while (game->map[i])
+	while (i < game->len)
 	{
 		if (!(ft_strlen(line) == ft_strlen(game->map[i])))
 			return (0);

@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 17:16:59 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/26 17:56:04 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/28 01:28:40 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_render(t_game *game)
 	i = 0;
 	win = game->mlx.mlx_win;
 	ft_initial_imgs(game);
-	while (game->map[i])
+	while (i < game->len)
 	{
 		j = 0;
 		while (game->map[i][j])
