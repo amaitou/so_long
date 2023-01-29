@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 17:16:59 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/29 03:28:05 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/29 03:40:00 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,15 +89,13 @@ void	ft_render(t_game *game)
 {
 	int		i;
 	int		j;
-	void	*win;
 
 	i = 0;
-	win = game->mlx.win;
 	ft_imgs(game);
 	while (i < game->len)
 	{
 		j = 0;
-		ft_putter(game, win, i, j);
+		ft_putter(game, game->mlx.win, i, j);
 		++i;
 	}
 }
