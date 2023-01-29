@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:38:07 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/29 04:39:33 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/29 17:25:59 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,16 @@
 # include "./superlib/superlib.h"
 # include <fcntl.h>
 # include <mlx.h>
+
+# define K_RIGHT 124
+# define A_RIGHT 2
+# define K_LEFT 123
+# define A_LEFT 0
+# define K_UP 126
+# define A_UP 13
+# define K_DOWN 125
+# define A_DOWN 1
+# define ESC 53
 
 typedef struct s_textures
 {
