@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:38:07 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/29 04:04:23 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/29 04:39:33 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ typedef struct s_game
 	int			exts;
 	int			len;
 	char		**map;
+	int			moves;
 	t_tex		tex;
 	t_img		img;
 	t_plr		plr;
@@ -88,5 +89,7 @@ void	ft_left(t_game *game);
 void	ft_up(t_game *game);
 void	ft_down(t_game *game);
 void	ft_destroy(t_game *game);
+void	ft_cord(t_game *game, char c);
+void	ft_alter(t_game *game, int y, int x, char c);
 
 #endif
