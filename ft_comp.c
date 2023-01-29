@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:25:46 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/28 01:28:09 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/29 01:07:09 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ static void	ft_counter(t_game *game, char c, int i, int j)
 {
 	if (c == 'P')
 	{
-		game->plr.x = i;
-		game->plr.y = j;
+		game->plr.y = i;
+		game->plr.x = j;
 		game->plrs += 1;
 	}
 	else if (c == 'E')
 	{
-		game->ext.x = i;
-		game->ext.y = j;
+		game->ext.y = i;
+		game->ext.x = j;
 		game->exts += 1;
 	}
 	else if (c == 'C')
@@ -53,7 +53,7 @@ int	ft_items(t_game *game)
 		while (game->map[i][j])
 		{
 			if (!(ft_contain("PEC10", game->map[i][j])))
-				return (-1);
+				return (0);
 			ft_counter(game, game->map[i][j], i, j);
 			++j;
 		}
@@ -77,6 +77,32 @@ int	ft_rect(t_game *game)
 		if (!(ft_strlen(line) == ft_strlen(game->map[i])))
 			return (0);
 		++i;
+	}
+	game->img.w = ft_strlen(line);
+	game->img.h = game->len;
+	return (1);
+}
+
+int	ft_walls(t_game *game)
+{
+	int	i;
+	int	j;
+	int	l;
+
+	i = 0;
+	while (game->map[0][i] && game->map[game->len - 1][i])
+	{
+		if (!(game->map[0][i] == '1' && game->map[game->len - 1][i] == '1'))
+			return (0);
+		++i;
+	}
+	j = 1;
+	while (j < game->len - 1)
+	{
+		l = ft_strlen(game->map[j]);
+		if (!(game->map[j][0] == '1' && game->map[j][l - 1] == '1'))
+			return (0);
+		++j;
 	}
 	return (1);
 }

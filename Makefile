@@ -1,3 +1,3 @@
 
 all:
-	rm -rf *.out
+	rm -rf *.out so_long

@@ -6,34 +6,62 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 17:16:59 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/28 01:28:40 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/28 20:30:21 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_imgs(t_game *game)
+static void	ft_imgs(t_game *game)
 {
 	int	x;
 	int	y;
 
-	x = game->img.width * 50;
-	y = game->img.height * 50;
-	game->img.collectible = mlx_xpm_file_to_image(
+	x = game->img.w * 50;
+	y = game->img.h * 50;
+	game->tex.col = mlx_xpm_file_to_image(
 			game->mlx.mlx,
 			"./textures/collectible.xpm", &x, &y);
-	game->img.player_1 = mlx_xpm_file_to_image(
+	game->tex.pl1 = mlx_xpm_file_to_image(
 			game->mlx.mlx,
 			"./textures/player_right.xpm", &x, &y);
-	game->img.background = mlx_xpm_file_to_image(
+	game->tex.bgd = mlx_xpm_file_to_image(
 			game->mlx.mlx,
 			"./textures/wall.xpm", &x, &y);
-	game->img.wall = mlx_xpm_file_to_image(
+	game->tex.wal = mlx_xpm_file_to_image(
 			game->mlx.mlx,
 			"./textures/background.xpm", &x, &y);
-	game->img.exit = mlx_xpm_file_to_image(
+	game->tex.ext = mlx_xpm_file_to_image(
 			game->mlx.mlx,
 			"./textures/exit.xpm", &x, &y);
+}
+
+static void	ft_putter(t_game *game, void *win, int i, int j)
+{
+	while (game->map[i][j])
+	{
+		if (game->map[i][j] == '1' || game->map[i][j] == 'C' ||
+			game->map[i][j] == 'P' || game->map[i][j] == 'E' ||
+			game->map[i][j] == '1')
+			mlx_put_image_to_window(game->mlx.mlx, win,
+				game->tex.bgd, j * 50, i * 50);
+		if (game->map[i][j] == '1')
+			mlx_put_image_to_window(game->mlx.mlx, win,
+				game->tex.wal, j * 50, i * 50);
+		if (game->map[i][j] == '0')
+			mlx_put_image_to_window(game->mlx.mlx, win,
+				game->tex.bgd, j * 50, i * 50);
+		if (game->map[i][j] == 'P')
+			mlx_put_image_to_window(game->mlx.mlx, win,
+				game->tex.pl1, j * 50, i * 50);
+		if (game->map[i][j] == 'E')
+			mlx_put_image_to_window(game->mlx.mlx, win,
+				game->tex.ext, j * 50, i * 50);
+		if (game->map[i][j] == 'C')
+			mlx_put_image_to_window(game->mlx.mlx, win,
+				game->tex.col, j * 50, i * 50);
+		++j;
+	}
 }
 
 void	ft_render(t_game *game)
@@ -43,35 +71,12 @@ void	ft_render(t_game *game)
 	void	*win;
 
 	i = 0;
-	win = game->mlx.mlx_win;
-	ft_initial_imgs(game);
+	win = game->mlx.win;
+	ft_imgs(game);
 	while (i < game->len)
 	{
 		j = 0;
-		while (game->map[i][j])
-		{
-			if (game->map[i][j] == '1' || game->map[i][j] == 'C' ||
-				game->map[i][j] == 'P' || game->map[i][j] == 'E' ||
-				game->map[i][j] == '1')
-				mlx_put_image_to_window(game->mlx.mlx, win,
-					game->img.background, j * 50, i * 50);
-			if (game->map[i][j] == '1')
-				mlx_put_image_to_window(game->mlx.mlx, win,
-					game->img.wall, j * 50, i * 50);
-			if (game->map[i][j] == '0')
-				mlx_put_image_to_window(game->mlx.mlx, win,
-					game->img.background, j * 50, i * 50);
-			if (game->map[i][j] == 'P')
-				mlx_put_image_to_window(game->mlx.mlx, win,
-					game->img.player_1, j * 50, i * 50);
-			if (game->map[i][j] == 'E')
-				mlx_put_image_to_window(game->mlx.mlx, win,
-					game->img.exit, j * 50, i * 50);
-			if (game->map[i][j] == 'C')
-				mlx_put_image_to_window(game->mlx.mlx, win,
-					game->img.collectible, j * 50, i * 50);
-			++j;
-		}
+		ft_putter(game, win, i, j);
 		++i;
 	}
 }

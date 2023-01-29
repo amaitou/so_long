@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:10:19 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/26 16:29:12 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/29 01:07:27 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_parse(t_game *game)
 
 	fd = open(game->path, O_RDONLY);
 	if (fd < 0)
-		return (-1);
+		return (0);
 	lines = "";
 	line = get_next_line(fd);
 	while (line)
