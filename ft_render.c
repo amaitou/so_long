@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 17:16:59 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/28 20:30:21 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/29 03:03:23 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,15 @@ static void	ft_imgs(t_game *game)
 	game->tex.pl1 = mlx_xpm_file_to_image(
 			game->mlx.mlx,
 			"./textures/player_right.xpm", &x, &y);
+	game->tex.pl2 = mlx_xpm_file_to_image(
+			game->mlx.mlx,
+			"./textures/player_left.xpm", &x, &y);
+	game->tex.pl3 = mlx_xpm_file_to_image(
+			game->mlx.mlx,
+			"./textures/player_up.xpm", &x, &y);
+	game->tex.pl4 = mlx_xpm_file_to_image(
+			game->mlx.mlx,
+			"./textures/player_down.xpm", &x, &y);
 	game->tex.bgd = mlx_xpm_file_to_image(
 			game->mlx.mlx,
 			"./textures/wall.xpm", &x, &y);
