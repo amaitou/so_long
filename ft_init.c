@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 15:15:43 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/26 16:04:02 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/29 03:26:54 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ void	ft_init(t_game *game)
 	game->cols = 0;
 	game->plrs = 0;
 	game->exts = 0;
+	game->plr.d = 'd';
 }

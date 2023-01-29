@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 00:03:36 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/29 03:22:46 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/29 03:29:17 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,28 @@ static void	ft_alter(t_game *game, int y, int x, char c)
 		game->map[y][x] = '0';
 		game->map[y][x + 1] = 'P';
 		game->plr.x++;
+		game->plr.d = 'r';
 	}
 	else if (c == 'l')
 	{
 		game->map[y][x] = '0';
 		game->map[y][x - 1] = 'P';
 		game->plr.x--;
+		game->plr.d = 'l';
 	}
 	else if (c == 'u')
 	{
 		game->map[y][x] = '0';
 		game->map[y - 1][x] = 'P';
 		game->plr.y--;
+		game->plr.d = 'u';
 	}
 	else if (c == 'd')
 	{
 		game->map[y][x] = '0';
 		game->map[y + 1][x] = 'P';
 		game->plr.y++;
+		game->plr.d = 'd';
 	}
 }
 

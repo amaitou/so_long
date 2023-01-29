@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 17:16:59 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/29 03:03:23 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/29 03:28:05 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,20 @@ static void	ft_putter(t_game *game, void *win, int i, int j)
 			mlx_put_image_to_window(game->mlx.mlx, win,
 				game->tex.bgd, j * 50, i * 50);
 		if (game->map[i][j] == 'P')
-			mlx_put_image_to_window(game->mlx.mlx, win,
-				game->tex.pl1, j * 50, i * 50);
+		{
+			if (game->plr.d == 'r')
+				mlx_put_image_to_window(game->mlx.mlx, win,
+					game->tex.pl1, j * 50, i * 50);
+			if (game->plr.d == 'l')
+				mlx_put_image_to_window(game->mlx.mlx, win,
+					game->tex.pl2, j * 50, i * 50);
+			if (game->plr.d == 'u')
+				mlx_put_image_to_window(game->mlx.mlx, win,
+					game->tex.pl3, j * 50, i * 50);
+			if (game->plr.d == 'd')
+				mlx_put_image_to_window(game->mlx.mlx, win,
+					game->tex.pl4, j * 50, i * 50);
+		}
 		if (game->map[i][j] == 'E')
 			mlx_put_image_to_window(game->mlx.mlx, win,
 				game->tex.ext, j * 50, i * 50);
