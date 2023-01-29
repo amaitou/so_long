@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 01:26:09 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/29 17:27:36 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/30 00:42:04 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_hook(int keycode, t_game *game)
 		ft_left(game);
 	else if (keycode == K_UP || keycode == A_UP)
 		ft_up(game);
-	else if (keycode == K_DOWN || keycode == K_DOWN)
+	else if (keycode == K_DOWN || keycode == A_DOWN)
 		ft_down(game);
 	else if (keycode == ESC)
 		ft_destroy(game);

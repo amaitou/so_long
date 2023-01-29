@@ -6,13 +6,13 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 17:16:59 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/29 03:40:00 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/30 00:45:10 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void	ft_imgs(t_game *game)
+static void	ft_comp_imgs(t_game *game)
 {
 	int	x;
 	int	y;
@@ -22,6 +22,24 @@ static void	ft_imgs(t_game *game)
 	game->tex.col = mlx_xpm_file_to_image(
 			game->mlx.mlx,
 			"./textures/collectible.xpm", &x, &y);
+	game->tex.bgd = mlx_xpm_file_to_image(
+			game->mlx.mlx,
+			"./textures/wall.xpm", &x, &y);
+	game->tex.wal = mlx_xpm_file_to_image(
+			game->mlx.mlx,
+			"./textures/background.xpm", &x, &y);
+	game->tex.ext = mlx_xpm_file_to_image(
+			game->mlx.mlx,
+			"./textures/exit.xpm", &x, &y);
+}
+
+static void	ft_plr_imgs(t_game *game)
+{
+	int	x;
+	int	y;
+
+	x = game->img.w * 50;
+	y = game->img.h * 50;
 	game->tex.pl1 = mlx_xpm_file_to_image(
 			game->mlx.mlx,
 			"./textures/player_right.xpm", &x, &y);
@@ -34,15 +52,6 @@ static void	ft_imgs(t_game *game)
 	game->tex.pl4 = mlx_xpm_file_to_image(
 			game->mlx.mlx,
 			"./textures/player_down.xpm", &x, &y);
-	game->tex.bgd = mlx_xpm_file_to_image(
-			game->mlx.mlx,
-			"./textures/wall.xpm", &x, &y);
-	game->tex.wal = mlx_xpm_file_to_image(
-			game->mlx.mlx,
-			"./textures/background.xpm", &x, &y);
-	game->tex.ext = mlx_xpm_file_to_image(
-			game->mlx.mlx,
-			"./textures/exit.xpm", &x, &y);
 }
 
 static void	ft_putter(t_game *game, void *win, int i, int j)
@@ -91,7 +100,8 @@ void	ft_render(t_game *game)
 	int		j;
 
 	i = 0;
-	ft_imgs(game);
+	ft_comp_imgs(game);
+	ft_plr_imgs(game);
 	while (i < game->len)
 	{
 		j = 0;

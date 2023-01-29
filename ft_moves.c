@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 00:03:36 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/29 04:41:13 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/30 00:41:20 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_right(t_game *game)
 		{
 			if (game->map[y][x + 1] == 'C')
 				game->cols--;
+			game->ext.on = 0;
 			ft_alter(game, y, x, 'r');
 			ft_printf("[+] Move -> %d\n", game->moves++);
 		}
@@ -32,9 +33,10 @@ void	ft_right(t_game *game)
 		{
 			if (game->cols == 0)
 				ft_destroy(game);
-			ft_alter(game, y, x, 'r');
 		}
 	}
+	else
+		game->plr.d = 'r';
 }
 
 void	ft_left(t_game *game)
@@ -51,16 +53,18 @@ void	ft_left(t_game *game)
 		{
 			if (game->map[y][x - 1] == 'C')
 				game->cols--;
+			game->ext.on = 0;
 			ft_alter(game, y, x, 'l');
 			ft_printf("[+] Move -> %d\n", game->moves++);
 		}
-		else if (game->map[y][x - 1] == 'E')
+		else if (x - 1 == game->ext.x && y == game->ext.y)
 		{
 			if (game->cols == 0)
 				ft_destroy(game);
-			game->map[y][x - 1] = 'E';
 		}
 	}
+	else
+		game->plr.d = 'l';
 }
 
 void	ft_up(t_game *game)
@@ -76,6 +80,7 @@ void	ft_up(t_game *game)
 		{
 			if (game->map[y - 1][x] == 'C')
 				game->cols--;
+			game->ext.on = 0;
 			ft_alter(game, y, x, 'u');
 			ft_printf("[+] Move -> %d\n", game->moves++);
 		}
@@ -83,9 +88,10 @@ void	ft_up(t_game *game)
 		{
 			if (game->cols == 0)
 				ft_destroy(game);
-			ft_alter(game, y, x, 'u');
 		}
 	}
+	else
+		game->plr.d = 'u';
 }
 
 void	ft_down(t_game *game)
@@ -101,6 +107,7 @@ void	ft_down(t_game *game)
 		{
 			if (game->map[y + 1][x] == 'C')
 				game->cols -= 1;
+			game->ext.on = 0;
 			ft_alter(game, y, x, 'd');
 			ft_printf("[+] Move -> %d\n", game->moves++);
 		}
@@ -108,7 +115,8 @@ void	ft_down(t_game *game)
 		{
 			if (game->cols == 0)
 				ft_destroy(game);
-			ft_alter(game, y, x, 'd');
 		}
 	}
+	else
+		game->plr.d = 'd';
 }
