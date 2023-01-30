@@ -6,14 +6,8 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 17:32:42 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/30 19:01:50 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/30 23:45:53 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void	ft_game_banner(t_game *game)
-{
-	char *banner = "
-"
-}

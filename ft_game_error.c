@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:24:34 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/30 19:36:52 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/31 00:25:35 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 void	ft_game_error(char *s)
 {
 	ft_printf("Error\n");
-	ft_printf("%s\n", s);
+	ft_printf("%s%s%s\n", R, s, W);
 	exit(0);
 }

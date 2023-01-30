@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:38:07 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/30 19:36:10 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/31 00:13:44 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <fcntl.h>
 # include <mlx.h>
 
+// Keyboard Keycodes
 # define K_RIGHT 124
 # define A_RIGHT 2
 # define K_LEFT 123
@@ -26,6 +27,13 @@
 # define K_DOWN 125
 # define A_DOWN 1
 # define ESC 53
+
+// String Colors
+# define R "\x1B[31m"
+# define B "\x1B[34m"
+# define Y "\x1B[33m"
+# define G "\x1B[32m" 
+# define W "\x1B[37m"
 
 typedef struct s_textures
 {
@@ -124,8 +132,11 @@ void	ft_move_up(t_game *game);
 void	ft_move_down(t_game *game);
 
 // Image Destroying
-void	ft_img_destroy(t_game *game);
+void	ft_img_destroy(t_game *game, char *s, char *c);
 int		ft_game_exit(t_game *game);
 void	ft_free(t_game *game);
+
+// Game Banner
+void	ft_game_banner(void);
 
 #endif
