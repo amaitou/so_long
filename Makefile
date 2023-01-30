@@ -19,25 +19,28 @@ CFILES = ft_check_path.c \
 		 so_long.c
 SOURCES = $(CFILES:.c=.o)
 SUPERLIB = ./superlib
+LIB = superlib/superlib.a
 %.o: %.c
-	@echo "compiling \033[1;32m$?\033[0m" 
+	@echo "\033[0;33m[*] compiling $?\033[0m"
 	@$(CC) $(CFLAGS) -c $?
 
-all: $(NAME)
-
-$(NAME): $(SOURCES) $(LIB)
-	@$(CC) $(CFLAGS) $? -lmlx -framework OpenGL -framework AppKit $(SUPERLIB)/superlib.a -o $@ 
+all: $(LIB) $(NAME)
 
 $(LIB):
-	$(MAKE) -s $(SUPERLIB)
+	@echo "\033[0;32m[+] making superlib\033[0m"
+	@$(MAKE) -C $(SUPERLIB)
+
+$(NAME): $(LIB) $(SOURCES) 
+	@$(CC) $(CFLAGS) $? -lmlx -framework OpenGL -framework AppKit $(LIB) -o $@ 
 
 clean:
-	@echo "deleting *.c"
+	@echo "\033[1;31m[!] deleting *.o\033[0m"
 	@rm -f $(SOURCES)
 
 fclean: clean
-	@echo "deleting *.o"
+	@echo "\033[1;31m[!] deleting so_long *.o and \033[0m"
 	@rm -f $(NAME)
+	@$(MAKE) fclean -C $(SUPERLIB)
 
 re: fclean all
 
