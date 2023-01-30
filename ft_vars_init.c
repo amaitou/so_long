@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_vars_init.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 11:24:34 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/28 21:53:25 by amait-ou         ###   ########.fr       */
+/*   Created: 2023/01/26 15:15:43 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/01/30 02:16:14 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_error(char *s)
+void	ft_vars_init(t_game *game)
 {
-	ft_printf("Error\n");
-	ft_printf("%s\n", s);
-	exit(0);
+	game->img.w = 0;
+	game->img.h = 0;
+	game->plr.x = 0;
+	game->plr.y = 0;
+	game->plr.d = 'd';
+	game->ext.on = 0;
+	game->ext.y = 0;
+	game->ext.y = 0;
+	game->cols = 0;
+	game->plrs = 0;
+	game->exts = 0;
+	game->moves = 1;
 }

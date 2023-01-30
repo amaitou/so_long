@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_moves.c                                         :+:      :+:    :+:   */
+/*   ft_player_moves.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 00:03:36 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/30 00:41:20 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/30 02:17:46 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_right(t_game *game)
+void	ft_move_right(t_game *game)
 {
 	int	x;
 	int	y;
@@ -32,14 +32,14 @@ void	ft_right(t_game *game)
 		else if (game->map[y][x + 1] == 'E')
 		{
 			if (game->cols == 0)
-				ft_destroy(game);
+				ft_img_destroy(game);
 		}
 	}
 	else
 		game->plr.d = 'r';
 }
 
-void	ft_left(t_game *game)
+void	ft_move_left(t_game *game)
 
 {
 	int	x;
@@ -60,14 +60,14 @@ void	ft_left(t_game *game)
 		else if (x - 1 == game->ext.x && y == game->ext.y)
 		{
 			if (game->cols == 0)
-				ft_destroy(game);
+				ft_img_destroy(game);
 		}
 	}
 	else
 		game->plr.d = 'l';
 }
 
-void	ft_up(t_game *game)
+void	ft_move_up(t_game *game)
 {
 	int	x;
 	int	y;
@@ -87,14 +87,14 @@ void	ft_up(t_game *game)
 		else if (game->map[y - 1][x] == 'E')
 		{
 			if (game->cols == 0)
-				ft_destroy(game);
+				ft_img_destroy(game);
 		}
 	}
 	else
 		game->plr.d = 'u';
 }
 
-void	ft_down(t_game *game)
+void	ft_move_down(t_game *game)
 {
 	int	x;
 	int	y;
@@ -114,7 +114,7 @@ void	ft_down(t_game *game)
 		else if (game->map[y + 1][x] == 'E')
 		{
 			if (game->cols == 0)
-				ft_destroy(game);
+				ft_img_destroy(game);
 		}
 	}
 	else

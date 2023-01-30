@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hook.c                                          :+:      :+:    :+:   */
+/*   ft_img_destroy.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 01:26:09 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/30 00:42:04 by amait-ou         ###   ########.fr       */
+/*   Created: 2023/01/29 04:02:55 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/01/30 02:02:47 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	ft_hook(int keycode, t_game *game)
+void	ft_img_destroy(t_game *game)
 {
-	if (keycode == K_RIGHT || keycode == A_RIGHT)
-		ft_right(game);
-	else if (keycode == K_LEFT || keycode == A_LEFT)
-		ft_left(game);
-	else if (keycode == K_UP || keycode == A_UP)
-		ft_up(game);
-	else if (keycode == K_DOWN || keycode == A_DOWN)
-		ft_down(game);
-	else if (keycode == ESC)
-		ft_destroy(game);
-	ft_render(game);
-	return (1);
+	mlx_destroy_window(game->mlx.mlx, game->mlx.win);
+	exit(0);
 }

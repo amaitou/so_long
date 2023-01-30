@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:25:46 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/29 01:07:09 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/30 01:46:51 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	ft_counter(t_game *game, char c, int i, int j)
 		game->cols += 1;
 }
 
-int	ft_items(t_game *game)
+int	ft_check_items(t_game *game)
 {
 	int	i;
 	int	j;
@@ -64,7 +64,7 @@ int	ft_items(t_game *game)
 	return (0);
 }
 
-int	ft_rect(t_game *game)
+int	ft_check_rect(t_game *game)
 {
 	char	*line;
 	int		i;
@@ -83,7 +83,7 @@ int	ft_rect(t_game *game)
 	return (1);
 }
 
-int	ft_walls(t_game *game)
+int	ft_check_walls(t_game *game)
 {
 	int	i;
 	int	j;

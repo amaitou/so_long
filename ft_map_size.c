@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_path.c                                          :+:      :+:    :+:   */
+/*   ft_map_size.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/21 19:26:43 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/26 16:20:35 by amait-ou         ###   ########.fr       */
+/*   Created: 2023/01/17 11:14:15 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/01/30 01:52:46 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static int	worldlen(char **p)
+void	ft_map_size(t_game *game)
 {
 	int	i;
 
 	i = 0;
-	while (p[i])
+	while (game->map[i])
 		++i;
-	return (i);
-}
-
-int	ft_path(char *s)
-{
-	char	**p;
-	int		i;
-
-	p = ft_split(s, '.');
-	i = worldlen(p);
-	if (ft_strcmp(p[i - 1], "ber") == 0)
-		return (1);
-	return (0);
+	game->len = i;
 }
