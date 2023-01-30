@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:38:07 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/30 02:17:21 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/30 19:36:10 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,5 +125,7 @@ void	ft_move_down(t_game *game);
 
 // Image Destroying
 void	ft_img_destroy(t_game *game);
+int		ft_game_exit(t_game *game);
+void	ft_free(t_game *game);
 
 #endif

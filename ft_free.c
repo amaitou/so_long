@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_img_destroy.c                                   :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 04:02:55 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/30 20:12:45 by amait-ou         ###   ########.fr       */
+/*   Created: 2023/01/30 19:33:09 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/01/30 19:40:56 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_img_destroy(t_game *game)
+void	ft_free(t_game *game)
 {
-	mlx_destroy_window(game->mlx.mlx, game->mlx.win);
-	exit(0);
+	int	i;
+
+	i = 0;
+	if (game)
+	{
+		while (game->map[i])
+		{
+			free(game->map[i]);
+			++i;
+		}
+	}
+	free(game->map);
 }

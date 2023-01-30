@@ -16,7 +16,10 @@ CFILES = ft_check_path.c \
 		 ft_putimg.c \
 		 ft_render.c \
 		 ft_vars_init.c \
+		 ft_game_exit.c \
+		 ft_free.c \
 		 so_long.c
+
 SOURCES = $(CFILES:.c=.o)
 SUPERLIB = ./superlib
 LIB = superlib/superlib.a
@@ -30,7 +33,7 @@ $(LIB):
 	@echo "\033[0;32m[+] making superlib\033[0m"
 	@$(MAKE) -C $(SUPERLIB)
 
-$(NAME): $(LIB) $(SOURCES) 
+$(NAME): $(LIB) $(SOURCES)
 	@$(CC) $(CFLAGS) $? -lmlx -framework OpenGL -framework AppKit $(LIB) -o $@ 
 
 clean:

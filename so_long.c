@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:29:24 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/30 02:15:14 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/30 19:08:09 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ int	main(int ac, char **ag)
 			ft_mlx(&game);
 			ft_render(&game);
 			mlx_hook(game.mlx.win, 2, 0, ft_key_hook, &game);
+			mlx_hook(game.mlx.win, 17, 0, ft_game_exit, &game);
 			mlx_loop(game.mlx.mlx);
 		}
 	}
+	ft_game_error("[!] Invalid Arguments ");
 	return (0);
 }
