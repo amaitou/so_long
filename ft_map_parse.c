@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:10:19 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/30 23:45:21 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/31 01:14:29 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,18 @@
 static int	ft_ends(char *s)
 {
 	int	strlen;
+	int	i;
 
 	strlen = ft_strlen(s);
-	if (s[strlen - 1] == '\n')
+	if (s[strlen - 1] == '\n' || s[0] == '\n')
 		return (1);
+	i = 1;
+	while (i < strlen - 1)
+	{
+		if (s[i] == '\n' && s[i + 1] == '\n')
+			return (1);
+		++i;
+	}
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 15:58:50 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/30 23:51:23 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/01/31 01:12:53 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ int	ft_checker(t_game *game)
 	if (!ft_check_path(game->path))
 		ft_game_error("[!] Invalid Path File");
 	if (!ft_map_parse(game))
-	{
-		ft_free(game);
 		ft_game_error("[!] Failed To Open The Map File");
-	}
 	ft_map_size(game);
 	if (!ft_check_rect(game))
 	{
