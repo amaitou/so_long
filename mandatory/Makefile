@@ -21,8 +21,9 @@ CFILES = ft_check_path.c \
 		 so_long.c
 
 SOURCES = $(CFILES:.c=.o)
-SUPERLIB = ./superlib
-LIB = superlib/superlib.a
+SUPERLIB = ../superlib
+LIB = ../superlib/superlib.a
+
 %.o: %.c
 	@echo "\033[0;33m[*] compiling $?\033[0m"
 	@$(CC) $(CFLAGS) -c $?
