@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:10:19 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/07 03:35:20 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/07 16:21:29 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,11 @@ int	ft_map_parse(t_game *game)
 	while (line)
 	{
 		lines = ft_strjoin(lines, line);
-		if (ft_strlen(line) > 46)
-			return (0);
 		line = get_next_line(fd);
 	}
 	if (ft_ends(lines))
 		return (0);
 	game->map = ft_split(lines, '\n');
-	if (ft_map_parse(game) > 20)
-		return (0);
 	free(lines);
 	close(fd);
 	return (1);
