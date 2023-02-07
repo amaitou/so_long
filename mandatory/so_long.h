@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:38:07 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/07 04:05:17 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/07 16:03:41 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ typedef struct s_exit
 {
 	int	y;
 	int	x;
-	int	on;
 }	t_ext;
 
 typedef struct s_mlx
