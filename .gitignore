@@ -2,3 +2,4 @@
 *.out
 *.pdf
 so_long
+.DS_store
