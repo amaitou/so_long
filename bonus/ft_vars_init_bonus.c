@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 15:15:43 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/07 13:13:45 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/07 16:06:38 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	ft_vars_init(t_game *game)
 	game->plr.x = 0;
 	game->plr.y = 0;
 	game->plr.d = 'd';
-	game->ext.on = 0;
 	game->ext.y = 0;
 	game->ext.y = 0;
 	game->cols = 0;
