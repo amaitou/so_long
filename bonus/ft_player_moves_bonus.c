@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 00:03:36 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/07 11:15:04 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/07 15:38:55 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	ft_move_right(t_game *game)
 		{
 			if (game->map[y][x + 1] == 'C')
 				game->cols--;
-			game->ext.on = 0;
 			ft_player_editer(game, y, x, 'r');
 			ft_printf("%s[+]%s Move -> %s%d%s\n", B, W, B, game->moves++, W);
 		}
@@ -34,6 +33,8 @@ void	ft_move_right(t_game *game)
 			if (game->cols == 0)
 				ft_img_destroy(game, "[*] You Won", G);
 		}
+		else if (game->map[y][x + 1] == 'M')
+			ft_img_destroy(game, "[!] You Have Been Caught By The Enemy", R);
 	}
 	else
 		game->plr.d = 'r';
@@ -53,15 +54,16 @@ void	ft_move_left(t_game *game)
 		{
 			if (game->map[y][x - 1] == 'C')
 				game->cols--;
-			game->ext.on = 0;
 			ft_player_editer(game, y, x, 'l');
 			ft_printf("%s[+]%s Move -> %s%d%s\n", B, W, B, game->moves++, W);
 		}
-		else if (x - 1 == game->ext.x && y == game->ext.y)
+		else if (game->map[y][x - 1] == 'E')
 		{
 			if (game->cols == 0)
 				ft_img_destroy(game, "[*] You Won", G);
 		}
+		else if (game->map[y][x - 1] == 'M')
+			ft_img_destroy(game, "[!] You Have Been Caught By The Enemy", R);
 	}
 	else
 		game->plr.d = 'l';
@@ -80,7 +82,6 @@ void	ft_move_up(t_game *game)
 		{
 			if (game->map[y - 1][x] == 'C')
 				game->cols--;
-			game->ext.on = 0;
 			ft_player_editer(game, y, x, 'u');
 			ft_printf("%s[+]%s Move -> %s%d%s\n", B, W, B, game->moves++, W);
 		}
@@ -89,6 +90,8 @@ void	ft_move_up(t_game *game)
 			if (game->cols == 0)
 				ft_img_destroy(game, "[*] You Won", G);
 		}
+		else if (game->map[y - 1][x] == 'M')
+			ft_img_destroy(game, "[!] You Have Been Caught By The Enemy", R);
 	}
 	else
 		game->plr.d = 'u';
@@ -107,15 +110,16 @@ void	ft_move_down(t_game *game)
 		{
 			if (game->map[y + 1][x] == 'C')
 				game->cols -= 1;
-			game->ext.on = 0;
 			ft_player_editer(game, y, x, 'd');
 			ft_printf("%s[+]%s Move -> %s%d%s\n", B, W, B, game->moves++, W);
 		}
 		else if (game->map[y + 1][x] == 'E')
 		{
 			if (game->cols == 0)
-				ft_img_destroy(game, "[*] You Have Won", G);
+				ft_img_destroy(game, "[*] You Won", G);
 		}
+		else if (game->map[y + 1][x] == 'M')
+			ft_img_destroy(game, "[!] You Have Been Caught By The Enemy", R);
 	}
 	else
 		game->plr.d = 'd';

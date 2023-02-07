@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:38:07 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/07 11:24:35 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/07 13:10:59 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,6 +139,7 @@ void	ft_move_right(t_game *game);
 void	ft_move_left(t_game *game);
 void	ft_move_up(t_game *game);
 void	ft_move_down(t_game *game);
+int		ft_enemytextures(t_game *game);
 
 // Image Destroying
 void	ft_img_destroy(t_game *game, char *s, char *c);

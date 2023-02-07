@@ -36,7 +36,8 @@ BONUS = bonus/ft_comp_checker_bonus.c \
 		 bonus/ft_game_exit_bonus.c \
 		 bonus/ft_map_free_bonus.c \
 		 bonus/so_long_bonus.c \
-		 bonus/ft_check_path_bonus.c
+		 bonus/ft_check_path_bonus.c \
+		 bonus/ft_enemy_hooks.c
 
 SUPERLIB_DIR = ./superlib
 SUPERLIB = ./superlib/superlib.a

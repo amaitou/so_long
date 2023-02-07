@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 17:16:59 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/07 11:15:08 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/07 11:52:46 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ void	ft_textures1(t_game *game)
 	game->tex.ext = mlx_xpm_file_to_image(
 			game->mlx.mlx,
 			"./textures/exit.xpm", &x, &y);
+	game->tex.ene = mlx_xpm_file_to_image(
+			game->mlx.mlx,
+			"./textures/enemy.xpm", &x, &y);
 }
 
 void	ft_textures2(t_game *game)
@@ -78,7 +81,7 @@ void	ft_put_textures(t_game *game, int i, int j)
 	{
 		if (game->map[i][j] == '1' || game->map[i][j] == 'C' ||
 			game->map[i][j] == 'P' || game->map[i][j] == 'E' ||
-			game->map[i][j] == '1')
+			game->map[i][j] == '1' || game->map[i][j] == 'M')
 			ft_texture_helper(game, game->tex.bgd, j, i);
 		if (game->map[i][j] == '1')
 			ft_texture_helper(game, game->tex.wal, j, i);
@@ -90,6 +93,8 @@ void	ft_put_textures(t_game *game, int i, int j)
 			ft_texture_helper(game, game->tex.ext, j, i);
 		if (game->map[i][j] == 'C')
 			ft_texture_helper(game, game->tex.col, j, i);
+		if (game->map[i][j] == 'M')
+			ft_texture_helper(game, game->tex.ene, j, i);
 		++j;
 	}
 }

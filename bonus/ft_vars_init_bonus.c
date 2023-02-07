@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 15:15:43 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/07 11:36:46 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/07 13:13:45 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,6 @@ void	ft_vars_init(t_game *game)
 	game->exts = 0;
 	game->moves = 1;
 	game->enes = 0;
+	game->ene.x = 0;
+	game->ene.y = 0;
 }
