@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_bonus.c                                    :+:      :+:    :+:   */
+/*   ft_game_render.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 19:33:09 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/03 04:55:07 by amait-ou         ###   ########.fr       */
+/*   Created: 2023/01/30 01:33:55 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/02/07 04:05:42 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include "so_long.h"
 
-void	ft_free(t_game *game)
+void	ft_game_render(t_game *game)
 {
-	int	i;
+	int		i;
+	int		j;
 
 	i = 0;
-	if (game)
+	ft_textures1(game);
+	ft_textures2(game);
+	while (i < game->len)
 	{
-		while (game->map[i])
-		{
-			free(game->map[i]);
-			++i;
-		}
+		j = 0;
+		ft_put_textures(game, i, j);
+		++i;
 	}
-	free(game->map);
 }

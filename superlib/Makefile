@@ -76,7 +76,7 @@ clean:
 	@rm -f $(SOURCES)
 
 fclean: clean
-	@echo "\033[1;31m[!] deleting superlib.a and *.o\033[0m"
+	@echo "\033[1;31m[!] deleting superlib.a\033[0m"
 	@rm -f $(NAME)
 
 re: fclean all

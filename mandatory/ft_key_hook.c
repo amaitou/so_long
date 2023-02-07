@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 01:26:09 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/31 00:19:36 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/07 04:04:27 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int	ft_key_hook(int keycode, t_game *game)
 		ft_move_down(game);
 	else if (keycode == ESC)
 		ft_img_destroy(game, "[.] You Have Pressed The ESC", R);
-	ft_render(game);
+	ft_game_render(game);
 	return (1);
 }

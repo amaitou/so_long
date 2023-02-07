@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:38:07 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/03 04:45:14 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/07 04:05:17 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ int		ft_map_parse(t_game *game);
 void	ft_vars_init(t_game *game);
 
 // Components Checking
-int		ft_checker(t_game *game);
+int		ft_comp_checker(t_game *game);
 int		ft_check_rect(t_game *game);
 int		ft_check_walls(t_game *game);
 int		ft_check_items(t_game *game);
@@ -112,17 +112,17 @@ int		ft_check_items(t_game *game);
 void	ft_map_size(t_game *game);
 
 // Map Rendering
-void	ft_render(t_game *game);
-void	ft_fileimgs1(t_game *game);
-void	ft_fileimgs2(t_game *game);
-void	ft_mlximg(t_game *game, void *img, int j, int i);
-void	ft_mlxplr(t_game *game, int j, int i);
-void	ft_putter(t_game *game, int i, int j);
-void	ft_cord(t_game *game, char c);
-void	ft_alter(t_game *game, int y, int x, char c);
+void	ft_game_render(t_game *game);
+void	ft_textures1(t_game *game);
+void	ft_textures2(t_game *game);
+void	ft_texture_helper(t_game *game, void *img, int j, int i);
+void	ft_textures3(t_game *game, int j, int i);
+void	ft_put_textures(t_game *game, int i, int j);
+void	ft_player_coordonates(t_game *game, char c);
+void	ft_player_editer(t_game *game, int y, int x, char c);
 
 // Mlx Initialization
-void	ft_mlx(t_game *game);
+void	ft_mlx_init(t_game *game);
 
 // Mlx Hooks
 int		ft_key_hook(int keycode, t_game *game);
@@ -134,7 +134,7 @@ void	ft_move_down(t_game *game);
 // Image Destroying
 void	ft_img_destroy(t_game *game, char *s, char *c);
 int		ft_game_exit(t_game *game);
-void	ft_free(t_game *game);
+void	ft_map_free(t_game *game);
 
 // Game Banner
 void	ft_game_banner(void);

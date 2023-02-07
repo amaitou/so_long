@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_render.c                                        :+:      :+:    :+:   */
+/*   ft_map_free.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 01:33:55 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/30 01:38:08 by amait-ou         ###   ########.fr       */
+/*   Created: 2023/01/30 19:33:09 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/02/07 03:50:30 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_render(t_game *game)
+void	ft_map_free(t_game *game)
 {
-	int		i;
-	int		j;
+	int	i;
 
 	i = 0;
-	ft_fileimgs1(game);
-	ft_fileimgs2(game);
-	while (i < game->len)
+	if (game)
 	{
-		j = 0;
-		ft_putter(game, i, j);
-		++i;
+		while (game->map[i])
+		{
+			free(game->map[i]);
+			++i;
+		}
 	}
+	free(game->map);
 }
