@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 17:16:59 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/08 09:38:19 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/08 11:00:51 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,10 @@ void	ft_put_textures(t_game *game, int i, int j)
 		if (game->map[i][j] == 'E')
 			ft_texture_helper(game, game->tex.ext, j, i);
 		if (game->map[i][j] == 'C')
-			ft_enemy_animation(game, j, i);
+		{
+			ft_enemy_animation_1(game, j, i);
+			ft_enemy_animation_2(game, j, i);
+		}
 		if (game->map[i][j] == 'M')
 			ft_texture_helper(game, game->tex.ene, j, i);
 		++j;

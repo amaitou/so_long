@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 01:33:55 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/07 17:55:42 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/08 10:58:04 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_game_render(t_game *game)
 	ft_textures1(game);
 	ft_textures2(game);
 	ft_textures4(game);
+	ft_textures5(game);
 	while (i < game->len)
 	{
 		j = 0;
