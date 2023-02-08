@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:38:07 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/08 11:01:05 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/08 11:17:37 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,5 +171,8 @@ void	ft_enemy_animation_2(t_game *game, int j, int i);
 
 // MLx Hook
 int		ft_both(t_game *game);
+
+// So_long Banner
+void	ft_game_banner(void);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:29:24 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/07 18:13:41 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/08 11:18:33 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main(int ac, char **ag)
 		ft_vars_init(&game);
 		if (ft_comp_checker(&game))
 		{
+			ft_game_banner();
 			ft_mlx_init(&game);
 			ft_game_render(&game);
 			mlx_loop_hook(game.mlx.mlx, ft_both, &game);

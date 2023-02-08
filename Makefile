@@ -19,7 +19,8 @@ MANDATORY = mandatory/ft_comp_checker.c \
 		 mandatory/ft_game_exit.c \
 		 mandatory/ft_map_free.c \
 		 mandatory/so_long.c \
-		 mandatory/ft_check_path.c
+		 mandatory/ft_check_path.c \
+		 mandatory/ft_game_banner.c
 BONUS = bonus/ft_comp_checker_bonus.c \
 		 bonus/ft_componenets_bonus.c \
 		 bonus/ft_game_error_bonus.c \
@@ -39,7 +40,8 @@ BONUS = bonus/ft_comp_checker_bonus.c \
 		 bonus/ft_check_path_bonus.c \
 		 bonus/ft_enemy_hooks.c \
 		 bonus/ft_collectible_animation.c \
-		 bonus/ft_both.c
+		 bonus/ft_both.c \
+		 bonus/ft_game_banner_bonus.c
 
 SUPERLIB_DIR = ./superlib
 SUPERLIB = ./superlib/superlib.a
