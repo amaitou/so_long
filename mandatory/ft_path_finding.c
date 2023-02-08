@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:23:33 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/08 19:13:01 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/08 19:48:08 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,12 @@ int	ft_path_finding(t_game *game)
 	{
 		if (ft_iscontain(game->c_map[i], 'E')
 			|| ft_iscontain(game->c_map[i], 'C'))
+		{
+			ft_map_free(game->c_map);
 			return (0);
+		}
 		++i;
 	}
+	ft_map_free(game->c_map);
 	return (1);
 }
