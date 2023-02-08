@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 17:16:59 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/07 06:27:24 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/07 17:13:25 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_textures1(t_game *game)
 	y = game->img.h * 50;
 	game->tex.col = mlx_xpm_file_to_image(
 			game->mlx.mlx,
-			"./textures/collectible.xpm", &x, &y);
+			"./textures/collectible_1.xpm", &x, &y);
 	game->tex.wal = mlx_xpm_file_to_image(
 			game->mlx.mlx,
 			"./textures/wall.xpm", &x, &y);

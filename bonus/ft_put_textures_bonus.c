@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 17:16:59 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/07 11:52:46 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/08 09:38:19 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@ void	ft_textures1(t_game *game)
 
 	x = game->img.w * 50;
 	y = game->img.h * 50;
-	game->tex.col = mlx_xpm_file_to_image(
-			game->mlx.mlx,
-			"./textures/collectible.xpm", &x, &y);
 	game->tex.wal = mlx_xpm_file_to_image(
 			game->mlx.mlx,
 			"./textures/wall.xpm", &x, &y);
@@ -79,9 +76,9 @@ void	ft_put_textures(t_game *game, int i, int j)
 {
 	while (game->map[i][j])
 	{
-		if (game->map[i][j] == '1' || game->map[i][j] == 'C' ||
-			game->map[i][j] == 'P' || game->map[i][j] == 'E' ||
-			game->map[i][j] == '1' || game->map[i][j] == 'M')
+		if (game->map[i][j] == '1' || game->map[i][j] == 'P'
+			|| game->map[i][j] == 'E' || game->map[i][j] == '1'
+			|| game->map[i][j] == 'M')
 			ft_texture_helper(game, game->tex.bgd, j, i);
 		if (game->map[i][j] == '1')
 			ft_texture_helper(game, game->tex.wal, j, i);
@@ -92,9 +89,11 @@ void	ft_put_textures(t_game *game, int i, int j)
 		if (game->map[i][j] == 'E')
 			ft_texture_helper(game, game->tex.ext, j, i);
 		if (game->map[i][j] == 'C')
-			ft_texture_helper(game, game->tex.col, j, i);
+			ft_enemy_animation(game, j, i);
 		if (game->map[i][j] == 'M')
 			ft_texture_helper(game, game->tex.ene, j, i);
 		++j;
 	}
+	mlx_string_put(game->mlx.mlx, game->mlx.win, 0 * 50, 0 * 50,
+		0xFF00FFFF, ft_itoa(game->moves));
 }

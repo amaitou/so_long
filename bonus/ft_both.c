@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_game_render_bonus.c                             :+:      :+:    :+:   */
+/*   ft_both.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 01:33:55 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/07 17:55:42 by amait-ou         ###   ########.fr       */
+/*   Created: 2023/02/07 18:12:49 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/02/07 19:27:09 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-void	ft_game_render(t_game *game)
+int	ft_both(t_game *game)
 {
-	int		i;
-	int		j;
-
-	i = 0;
-	ft_textures1(game);
-	ft_textures2(game);
-	ft_textures4(game);
-	while (i < game->len)
-	{
-		j = 0;
-		ft_put_textures(game, i, j);
-		++i;
-	}
+	ft_enemytextures(game);
+	ft_collectible_animation(game);
+	return (1);
 }

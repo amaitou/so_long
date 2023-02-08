@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 00:03:36 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/07 15:38:55 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/07 19:12:37 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_move_right(t_game *game)
 			if (game->map[y][x + 1] == 'C')
 				game->cols--;
 			ft_player_editer(game, y, x, 'r');
-			ft_printf("%s[+]%s Move -> %s%d%s\n", B, W, B, game->moves++, W);
+			game->moves++;
 		}
 		else if (game->map[y][x + 1] == 'E')
 		{
@@ -55,7 +55,7 @@ void	ft_move_left(t_game *game)
 			if (game->map[y][x - 1] == 'C')
 				game->cols--;
 			ft_player_editer(game, y, x, 'l');
-			ft_printf("%s[+]%s Move -> %s%d%s\n", B, W, B, game->moves++, W);
+			game->moves++;
 		}
 		else if (game->map[y][x - 1] == 'E')
 		{
@@ -83,7 +83,7 @@ void	ft_move_up(t_game *game)
 			if (game->map[y - 1][x] == 'C')
 				game->cols--;
 			ft_player_editer(game, y, x, 'u');
-			ft_printf("%s[+]%s Move -> %s%d%s\n", B, W, B, game->moves++, W);
+			game->moves++;
 		}
 		else if (game->map[y - 1][x] == 'E')
 		{
@@ -111,7 +111,7 @@ void	ft_move_down(t_game *game)
 			if (game->map[y + 1][x] == 'C')
 				game->cols -= 1;
 			ft_player_editer(game, y, x, 'd');
-			ft_printf("%s[+]%s Move -> %s%d%s\n", B, W, B, game->moves++, W);
+			game->moves++;
 		}
 		else if (game->map[y + 1][x] == 'E')
 		{
