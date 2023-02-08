@@ -57,12 +57,12 @@ $(SUPERLIB):
 	@$(MAKE) -C $(SUPERLIB_DIR)
 
 # generate the executable file "so_long" (Mandatory part)
-$(NAME):
+$(NAME): $(MANDATORY)
 	@echo "\033[95m[.] output *.c to so_long\033[0m"
 	@$(CC) $(CFLAGS) $(MANDATORY) -lmlx -framework OpenGL -framework AppKit $(SUPERLIB) -o $@
 
 # generate the executable file "so_long_bonus" (Bonus part)
-$(NAME_2):
+$(NAME_2): $(BONUS) $(MANDATORY)
 	@echo "\033[95m[.] output *.c to so_long_bonus\033[0m"
 	@$(CC) $(CFLAGS) $(BONUS) -lmlx -framework OpenGL -framework AppKit $(SUPERLIB) -o $@
 
