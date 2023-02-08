@@ -6,18 +6,18 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 11:12:45 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/01/24 00:18:46 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/08 19:08:22 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 
-  You might see some of additional functions (static functions particularly) 
-  within some of my c files and those functions are defined as static to not 
-  be read by any external files as well as they were made to help have my code
-  done.
+	You might see some of additional functions (static functions particularly) 
+	within some of my c files and those functions are defined as static to not 
+	be read by any external files as well as they were made to help have my code
+	done.
 
-  Note: I hate using the keyword NULL so you might see (void *)0 alot in my codes
+	Note: I hate using the keyword NULL so you might see (void *)0 alot in my codes
 
  */
 
@@ -92,6 +92,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int		ft_charlen(char *s, int c);
 int		ft_strcmp(char *s1, char *s2);
+int		ft_iscontain(char *s, char c);
 
 /* Get next line */
 char	*get_next_line(int fd);

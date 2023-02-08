@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:38:07 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/07 16:03:41 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/08 19:28:22 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,9 @@ typedef struct s_game
 	int			plrs;
 	int			exts;
 	int			len;
+	int			fd2;
 	char		**map;
+	char		**c_map;
 	int			moves;
 	t_tex		tex;
 	t_img		img;
@@ -91,6 +93,11 @@ typedef struct s_game
 
 // Path Checking
 int		ft_check_path(char *s);
+
+// Path Finding
+void	ft_copy_map(t_game *game);
+void	ft_fill_map(t_game *game, int y, int x);
+int		ft_path_finding(t_game *game);
 
 // Error Showing
 void	ft_game_error(char *s);
@@ -133,7 +140,7 @@ void	ft_move_down(t_game *game);
 // Image Destroying
 void	ft_img_destroy(t_game *game, char *s, char *c);
 int		ft_game_exit(t_game *game);
-void	ft_map_free(t_game *game);
+void	ft_map_free(char **map);
 
 // Game Banner
 void	ft_game_banner(void);

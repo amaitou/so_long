@@ -6,24 +6,24 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 19:33:09 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/07 03:50:30 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/08 19:28:37 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_map_free(t_game *game)
+void	ft_map_free(char **map)
 {
 	int	i;
 
 	i = 0;
-	if (game)
+	if (map)
 	{
-		while (game->map[i])
+		while (map[i])
 		{
-			free(game->map[i]);
+			free(map[i]);
 			++i;
 		}
 	}
-	free(game->map);
+	free(map);
 }

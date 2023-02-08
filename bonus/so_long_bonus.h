@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:38:07 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/08 11:17:37 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/08 19:42:45 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ typedef struct s_game
 	int			enes;
 	int			len;
 	char		**map;
+	char		**c_map;
 	int			moves;
 	t_tex		tex;
 	t_img		img;
@@ -114,6 +115,11 @@ typedef struct s_game
 
 // Path Checking
 int		ft_check_path(char *s);
+
+// Path Finding
+void	ft_copy_map(t_game *game);
+void	ft_fill_map(t_game *game, int y, int x);
+int		ft_path_finding(t_game *game);
 
 // Error Showing
 void	ft_game_error(char *s);
@@ -159,7 +165,7 @@ int		ft_enemytextures(t_game *game);
 // Image Destroying
 void	ft_img_destroy(t_game *game, char *s, char *c);
 int		ft_game_exit(t_game *game);
-void	ft_map_free(t_game *game);
+void	ft_map_free(char **map);
 
 // Game Banner
 void	ft_game_banner(void);
@@ -169,8 +175,8 @@ int		ft_collectible_animation(t_game *game);
 void	ft_enemy_animation_1(t_game *game, int j, int i);
 void	ft_enemy_animation_2(t_game *game, int j, int i);
 
-// MLx Hook
-int		ft_both(t_game *game);
+// Mlx Hook
+int		ft_both_hooks(t_game *game);
 
 // So_long Banner
 void	ft_game_banner(void);

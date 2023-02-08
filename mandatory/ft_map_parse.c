@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:10:19 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/07 16:21:29 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/08 18:20:52 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ static int	ft_ends(char *s)
 
 int	ft_map_parse(t_game *game)
 {
-	int		fd;
 	char	*lines;
 	char	*line;
+	int		fd;
 
 	lines = NULL;
 	fd = open(game->path, O_RDONLY);

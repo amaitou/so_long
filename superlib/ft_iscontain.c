@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_game_exit_bonus.c                               :+:      :+:    :+:   */
+/*   ft_iscontain.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 19:06:27 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/08 19:38:12 by amait-ou         ###   ########.fr       */
+/*   Created: 2023/02/08 19:05:45 by amait-ou          #+#    #+#             */
+/*   Updated: 2023/02/08 19:06:51 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include "superlib.h"
 
-int	ft_game_exit(t_game *game)
+int	ft_iscontain(char *s, char c)
 {
-	ft_printf("%s[!] You Have Exited The Game %s\n", R, W);
-	ft_map_free(game->map);
-	exit(0);
+	while (*s)
+	{
+		if (*s == c)
+			return (1);
+		++s;
+	}
+	return (0);
 }
