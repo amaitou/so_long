@@ -25,6 +25,7 @@ Here are the rules that I have used in this project's makefile:
 ---
 
 # Preview
+<img width="2560" alt="Screen Shot 2023-02-09 at 9 43 26 PM" src="https://user-images.githubusercontent.com/49293816/217935903-dfef0533-08bf-4083-adad-b4d5ee6d249a.png">
 
 ---
 
@@ -35,6 +36,7 @@ Here are the rules that I have used in this project's makefile:
 - What xpm files are?
 - Path-finding algorithms to check a valid path
 - Makefile
+---
 
 # Contact Me
 
@@ -43,3 +45,5 @@ Here are the rules that I have used in this project's makefile:
 
 [_1]: https://twitter.com/amait0u
 [_2]: https://www.instagram.com/amait0u
+
+---
