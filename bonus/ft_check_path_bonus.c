@@ -6,7 +6,7 @@
 /*   By: amait-ou <amait-ou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 03:38:14 by amait-ou          #+#    #+#             */
-/*   Updated: 2023/02/07 16:18:59 by amait-ou         ###   ########.fr       */
+/*   Updated: 2023/02/08 23:28:38 by amait-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,13 @@ int	ft_check_path(char *s)
 
 	p = ft_split(s, '.');
 	i = worldlen(p);
-	if (ft_strcmp(p[i - 1], "ber") == 0)
+	if (i >= 2)
 	{
-		ft_free_path(p);
-		return (1);
+		if (ft_strcmp(p[i - 1], "ber") == 0)
+		{
+			ft_free_path(p);
+			return (1);
+		}
 	}
 	ft_free_path(p);
 	return (0);
