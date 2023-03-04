@@ -41,6 +41,8 @@ int	ft_map_parse(t_game *game)
 	if (fd < 0)
 		return (0);
 	line = get_next_line(fd);
+	if (!line)
+		return (0);
 	while (line)
 	{
 		lines = ft_strjoin(lines, line);
