@@ -5,7 +5,7 @@
 This project is a very small 2D game. <br />
 Its purpose is to make you work with textures, sprites, and some other very basic gameplay elements using the `42 built-in library` _<mlx.h>_ **(Minilibx)**
 
-**```Note: I haven't shared the PDF of this project, as well as, I haven't explained anything due to school privacy reasons!```**
+**``` Note: I haven't shared the PDF of this project, as well as, I haven't explained anything due to school privacy reasons!```**
 
 This project consists of two parts:
 - **Mandatory part**
@@ -20,7 +20,7 @@ Here are the rules that I have used in this project's makefile:
 - all -> to make the mandatory part
 - bonus -> to make the mandatory as well as the bonus part
 - clean -> to clean the project from all executable and object file
-- fclean -> it does the same thing as `clean` but it removes the compiled libraries as well
+- fclean -> It does the same thing as `clean` but it removes the compiled libraries as well
 - re -> it deletes and re-compiles all the things from scratch
 ---
 
